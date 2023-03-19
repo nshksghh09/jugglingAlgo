@@ -1,0 +1,20 @@
+#include <vector>
+using namespace std;
+int rangeSum(int arr[],int n, int indiceLower=0, int indiceUpper=0){
+    int prefix[n]={0};
+     prefix[0]=arr[0];
+    int prefixSum=arr[0];
+    for(int i=1; i<n; i++){
+        prefixSum=prefixSum+arr[i];
+       prefix[i]=prefixSum;
+    }
+    if(indiceLower==0) return prefix[indiceUpper];
+    else return prefix[indiceUpper] - prefix[indiceLower-1];
+}
+int main() {
+int arr[]={4,5,3,2,5};
+int n=sizeof(arr)/sizeof(arr[0]);
+cout<<rangeSum( arr,n,0,3);
+cout<<endl;
+    return 0;
+}
