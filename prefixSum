@@ -1,0 +1,18 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int arr[]={10, 20, 10, 5, 15};
+  int n=sizeof(arr)/sizeof(arr[0]);
+   int prefixSum=arr[0];
+for(int i=1;i<n;i++){
+    prefixSum=prefixSum+arr[i];
+    arr[i]=prefixSum;
+}
+for(int i=0;i<n;i++){
+    cout<<arr[i]<<" ";
+}
+cout<<endl;
+    return 0;
+}
